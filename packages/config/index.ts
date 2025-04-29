@@ -1,0 +1,1 @@
+export const HELLO_WORLD = "Hello from constants package!";
