@@ -1,10 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-// import './index.css'
-import App from './App.tsx'
+import "./styles.css";
+import Providers from './components/Common/Providers/index.tsx'
+import { Routes } from './routes.tsx'
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('_togi_') as HTMLElement).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <Providers>
+      {/* <App /> */}
+      <Routes />
+    </Providers>
+  </StrictMode>
 )
