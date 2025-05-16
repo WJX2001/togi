@@ -1,0 +1,3 @@
+{
+  "extends": "@togi/config/react.tsconfig.json"
+}

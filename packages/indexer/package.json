@@ -1,0 +1,29 @@
+{
+  "name": "@togi/indexer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generated.ts",
+  "scripts": {
+    "codegen": "graphql-codegen",
+    "typecheck": "tsc --pretty"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.9.0",
+  "dependencies": {
+    "@apollo/client": "^3.13.8",
+    "@togi/data": "workspace:*",
+    "@types/node": "^20.17.32",
+    "graphql": "^16.11.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.6",
+    "@graphql-codegen/fragment-matcher": "^5.1.0",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-operations": "^4.6.1",
+    "@graphql-codegen/typescript-react-apollo": "^4.3.2",
+    "@togi/config": "workspace:*",
+    "typescript": "^5.8.3"
+  }
+}
