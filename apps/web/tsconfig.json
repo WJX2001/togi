@@ -2,17 +2,8 @@
   "extends": "@togi/config/react.tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext",
-      "webworker"
-    ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "webworker"],
+    "paths": { "@/*": ["./src/*"] }
   },
   "include": [
     "**/*.ts",

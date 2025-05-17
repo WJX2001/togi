@@ -19,6 +19,8 @@ import {
   UserGroupIcon as UserGroupSolid,
 } from '@heroicons/react/24/solid';
 import Tooltip from '../UI/Tooltip';
+import { useAccountStore } from '@/store/persisted/useAccountStore';
+import SignedAccount from './SignedAccount';
 
 const navigationItems = {
   '/': {
@@ -79,7 +81,9 @@ const NavItems = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
 };
 
 const Navbar = () => {
+  const { currentAccount } = useAccountStore();
   const { appIcon } = usePreferencesStore();
+
   return (
     <aside className="sticky top-5 mt-5 hidden w-10 shrink-0 flex-col items-center gap-y-5 md:flex">
       <Link to="/" onClick={() => console.log(111)}>
@@ -91,7 +95,14 @@ const Navbar = () => {
           width={32}
         />
       </Link>
-      <NavItems isLoggedIn={false} />
+      <NavItems isLoggedIn={!!currentAccount} />
+      {currentAccount ? (
+        <SignedAccount />
+      ) : (
+        <button type="button">
+          <UserCircleIcon className="size-6" />
+        </button>
+      )}
     </aside>
   );
 };

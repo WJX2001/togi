@@ -1,1 +1,22 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin "@tailwindcss/aspect-ratio";
+
+@layer base {
+  /* :root {
+    @apply font-sofia-pro text-black dark:text-white;
+  } */
+
+  /* html {
+    @apply overflow-y-scroll;
+  }
+
+  body {
+    @apply bg-gray-50;
+    @apply dark:bg-black;
+  } */
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}

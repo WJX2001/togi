@@ -12,9 +12,11 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-tooltip": "^1.2.4",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/vite": "^4.1.4",
     "@togi/config": "workspace:*",
     "@togi/data": "workspace:*",
+    "@togi/indexer": "workspace:*",
     "motion": "^12.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
