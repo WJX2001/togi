@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+
 import { Link, useLocation } from 'react-router';
 import { STATIC_IMAGES_URL } from '@togi/data/constants';
 import Image from '../UI/Image';
@@ -96,6 +96,7 @@ const Navbar = () => {
         />
       </Link>
       <NavItems isLoggedIn={!!currentAccount} />
+      <SignedAccount />
       {currentAccount ? (
         <SignedAccount />
       ) : (

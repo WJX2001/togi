@@ -1,5 +1,5 @@
 import { Localstorage } from '@togi/data/storage';
-import { AccountFragment } from '@togi/indexer';
+import type { AccountFragment } from '@togi/indexer';
 import { createTrackedSelector } from 'react-tracked';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
