@@ -15,6 +15,18 @@
     @apply dark:bg-black;
   } */
 
+  .menu-item {
+    @apply m-2 block cursor-pointer rounded-lg px-2 py-1.5 text-sm text-gray-700 dark:text-gray-200;
+  }
+
+  .dropdown-active {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  .divider {
+    @apply border-b border-gray-200 dark:border-gray-700;
+  }
+
   button:not(:disabled),
   [role='button']:not(:disabled) {
     cursor: pointer;

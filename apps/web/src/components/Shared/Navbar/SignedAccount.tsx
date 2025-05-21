@@ -6,8 +6,18 @@ import MenuTransition from '../MenuTransition';
 import AccountLink from '../Account/AccountLink';
 import type { AccountFragment } from '@togi/indexer';
 import cn from '@/helpers/cn';
+import YourAccount from './NavItems/YourAccount';
+import { Link } from 'react-router';
+import Settings from './NavItems/Settings';
+import hasAccess from '@/helpers/hasAccess';
+import { Features } from '@togi/data/features';
+import StaffTools from './NavItems/StaffTools';
+import SwitchAccount from './NavItems/SwitchAccount';
+import ThemeSwitch from './NavItems/ThemeSwitch';
+import Logout from './NavItems/Logout';
 const SignedAccount = () => {
   const { currentAccount } = useAccountStore();
+  const isStaff = hasAccess(Features.Staff);
   const Avatar = () => (
     <Image
       alt={currentAccount?.address}
@@ -30,12 +40,53 @@ const SignedAccount = () => {
           <MenuItem
             as={AccountLink}
             className={({ focus }: { focus: boolean }) =>
-              cn({ "dropdown-active": focus }, "menu-item")
+              cn({ 'dropdown-active': focus }, 'menu-item')
             }
             account={currentAccount as AccountFragment}
           >
-            {/* <YourAccount /> */}
-            223
+            <YourAccount />
+          </MenuItem>
+          <MenuItem
+            as={Link}
+            className={({ focus }: { focus: boolean }) =>
+              cn({ 'dropdown-active': focus }, 'menu-item')
+            }
+            to="/settings"
+          >
+            <Settings />
+          </MenuItem>
+          {isStaff ? (
+            <MenuItem
+              as={Link}
+              className={({ focus }: { focus: boolean }) =>
+                cn({ 'dropdown-active': focus }, 'menu-item')
+              }
+              to="/staff"
+            >
+              <StaffTools />
+            </MenuItem>
+          ) : null}
+          <div className="divider" />
+          <MenuItem
+            as="div"
+            className={({ focus }) => cn({ 'dropdown-active': focus }, 'm-2 rounded-lg')}
+          >
+            <SwitchAccount />
+          </MenuItem>
+          <MenuItem
+            as="div"
+            className={({ focus }) => cn({ 'dropdown-active': focus }, 'm-2 rounded-lg')}
+          >
+            <ThemeSwitch />
+          </MenuItem>
+          <div className="divider" />
+          <MenuItem
+            as="div"
+            className={({ focus }) =>
+              cn({ "dropdown-active": focus }, "m-2 rounded-lg")
+            }
+          >
+            <Logout />
           </MenuItem>
         </MenuItems>
       </MenuTransition>
