@@ -20,6 +20,7 @@
     "@togi/helpers": "workspace:*",
     "@togi/indexer": "workspace:*",
     "clsx": "^2.1.1",
+    "family": "^0.1.1",
     "motion": "^12.9.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -30,6 +31,7 @@
     "tailwindcss": "^4.1.4",
     "viem": "^2.29.4",
     "vite-tsconfig-paths": "^5.1.4",
+    "wagmi": "^2.15.4",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

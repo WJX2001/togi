@@ -1,4 +1,3 @@
-
 import { Link, useLocation } from 'react-router';
 import { STATIC_IMAGES_URL } from '@togi/data/constants';
 import Image from '../UI/Image';
@@ -21,6 +20,8 @@ import {
 import Tooltip from '../UI/Tooltip';
 import { useAccountStore } from '@/store/persisted/useAccountStore';
 import SignedAccount from './SignedAccount';
+import type { ReactNode } from 'react';
+import { useAuthModalStore } from '@/store/non-persisted/modal/useAuthModalStore';
 
 const navigationItems = {
   '/': {
@@ -83,6 +84,7 @@ const NavItems = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
 const Navbar = () => {
   const { currentAccount } = useAccountStore();
   const { appIcon } = usePreferencesStore();
+  const { setShowAuthModal } = useAuthModalStore();
 
   return (
     <aside className="sticky top-5 mt-5 hidden w-10 shrink-0 flex-col items-center gap-y-5 md:flex">
@@ -96,11 +98,10 @@ const Navbar = () => {
         />
       </Link>
       <NavItems isLoggedIn={!!currentAccount} />
-      <SignedAccount />
       {currentAccount ? (
         <SignedAccount />
       ) : (
-        <button type="button">
+        <button onClick={() => setShowAuthModal(true)} type="button">
           <UserCircleIcon className="size-6" />
         </button>
       )}
