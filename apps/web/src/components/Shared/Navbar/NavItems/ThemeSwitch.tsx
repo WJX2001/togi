@@ -1,10 +1,13 @@
 import cn from '@/helpers/cn';
+import { useTheme } from '@/hooks/useTheme';
+import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 
 interface ThemeSwitchProps {
   className?: string;
   onClick?: () => void;
 }
 const ThemeSwitch = ({ className = '', onClick }: ThemeSwitchProps) => {
+  const { toggleTheme, theme } = useTheme();
   return (
     <button
       className={cn(
@@ -12,12 +15,24 @@ const ThemeSwitch = ({ className = '', onClick }: ThemeSwitchProps) => {
         className
       )}
       onClick={() => {
-        // toggleTheme();
-        // onClick?.();
+        toggleTheme();
+        onClick?.();
       }}
       type="button"
     >
-      <div>Dark mode</div>
+      {
+        theme === "light" ? (
+          <>
+            <MoonIcon className="size-4"/>
+            <div>Dark mode</div>
+          </>
+        ): (
+          <>
+          <SunIcon className="size-4" />
+          <div>Light mode</div>
+        </>
+        )
+      }
     </button>
   );
 };

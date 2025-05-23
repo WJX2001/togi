@@ -1,11 +1,12 @@
-import { ReactNode } from 'react'
+import { ThemeProvider } from '@/hooks/useTheme'
+import type { ReactNode } from 'react'
 
 interface ProvidersProps {
   children: ReactNode
 }
 
 const Providers = ({ children }: ProvidersProps) => {
-  return <>{children}</>
+  return <ThemeProvider>{children}</ThemeProvider>
 }
 
 export default Providers

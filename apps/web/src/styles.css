@@ -1,19 +1,19 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/aspect-ratio";
-
+@custom-variant dark (&:where(.dark, .dark *));
 @layer base {
   /* :root {
     @apply font-sofia-pro text-black dark:text-white;
   } */
 
-  /* html {
+  html {
     @apply overflow-y-scroll;
   }
 
   body {
     @apply bg-gray-50;
     @apply dark:bg-black;
-  } */
+  }
 
   .menu-item {
     @apply m-2 block cursor-pointer rounded-lg px-2 py-1.5 text-sm text-gray-700 dark:text-gray-200;
