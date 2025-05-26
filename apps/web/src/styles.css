@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/aspect-ratio";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-500: #fb3a5d;
+  --color-brand-600: #e91546;
+}
 @layer base {
   /* :root {
     @apply font-sofia-pro text-black dark:text-white;
@@ -27,6 +32,15 @@
     @apply border-b border-gray-200 dark:border-gray-700;
   }
 
+  .linkify a {
+    @apply text-brand-500;
+    @apply hover:text-brand-600 dark:hover:text-brand-500;
+  }
+
+  .linkify-button button {
+    @apply text-brand-500;
+    @apply hover:text-brand-600 dark:hover:text-brand-500;
+  }
 
   button:not(:disabled),
   [role='button']:not(:disabled) {

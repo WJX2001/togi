@@ -2,6 +2,7 @@ import { useAuthModalStore } from '@/store/non-persisted/modal/useAuthModalStore
 import { useState } from 'react';
 import { useAccount } from 'wagmi';
 import AuthMessage from './AuthMessage';
+import Login from './Login';
 
 const NotConnected = ({ isLogin }: { isLogin?: boolean }) => (
   <AuthMessage
@@ -17,7 +18,11 @@ const Auth = () => {
   return (
     <div className="m-5">
       {authModalType === 'signup' ? (
-        <div className="space-y-5">2222</div>
+        <div className="space-y-5">
+          {/* {!isConnected && <NotConnected />}
+          <Signup /> */}
+          222
+        </div>
       ) : (
         <div className="space-y-5">
           {isConnected ? (
@@ -27,11 +32,14 @@ const Auth = () => {
                 title="Please sign the message."
               />
             ) : (
-              <NotConnected isLogin />
+              // <SignupMessage />
+              222222
             )
           ) : (
             <NotConnected isLogin />
           )}
+          {/* <Login setHasAccounts={setHasAccounts} /> */}
+          <Login setHasAccounts={setHasAccounts} />
         </div>
       )}
     </div>

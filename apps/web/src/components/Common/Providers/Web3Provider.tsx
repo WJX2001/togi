@@ -16,7 +16,7 @@ const connectors = [
 ];
 
 const config = createConfig({
-  chains: [CHAIN], 
+  chains: [CHAIN],
   transports: {
     [CHAIN.id]: getRpc({ mainnet: IS_MAINNET })
   },
