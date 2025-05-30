@@ -6,10 +6,9 @@ import apolloClient from '@togi/indexer/apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import authLink from '@/helpers/authLink';
 
-// export const queryClient = new QueryClient({
-//   defaultOptions: { queries: { refetchOnWindowFocus: false } }
-// });
-const queryClient = new QueryClient();
+export const queryClient = new QueryClient({
+  defaultOptions: { queries: { refetchOnWindowFocus: false } }
+});
 
 const lensApolloClient = apolloClient(authLink);
 

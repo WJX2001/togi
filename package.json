@@ -12,9 +12,16 @@
   "license": "ISC",
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
-    "tsx": "^4.19.3"
+    "tsx": "^4.19.3",
+    "@apollo/client": "3.13.8"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "@apollo/client": "3.13.8"
+    }
   }
+
 }
