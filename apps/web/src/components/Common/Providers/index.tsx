@@ -4,13 +4,14 @@ import Web3Provider from './Web3Provider';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import apolloClient from '@togi/indexer/apollo/client';
 import { ApolloProvider } from '@apollo/client';
+import authLink from '@/helpers/authLink';
 
 // export const queryClient = new QueryClient({
 //   defaultOptions: { queries: { refetchOnWindowFocus: false } }
 // });
 const queryClient = new QueryClient();
 
-const lensApolloClient = apolloClient();
+const lensApolloClient = apolloClient(authLink);
 
 interface ProvidersProps {
   children: ReactNode;
